@@ -1,0 +1,49 @@
+{
+  "name": "tiny-bst",
+  "description": "Tiny binary search tree for browser or server",
+  "version": "0.1.0",
+  "homepage": "http://avoidwork.github.io/tiny-bst",
+  "author": {
+    "name": "Jason Mulligan",
+    "email": "jason.mulligan@avoidwork.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/avoidwork/tiny-bst.git"
+  },
+  "bugs": {
+    "url": "https://github.com/avoidwork/tiny-bst/issues"
+  },
+  "licenses": [
+    {
+      "type": "BSD-3",
+      "url": "https://raw.github.com/avoidwork/tiny-bst/master/LICENSE"
+    }
+  ],
+  "main": "lib/tiny-bst",
+  "engines": {
+    "node": ">=0.8.0"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-cli": "~0.1.6",
+    "grunt-exec": "~0.4",
+    "grunt-sed": "~0.1",
+    "grunt-contrib-concat": "~0.1.3",
+    "grunt-contrib-jshint": "~0.1",
+    "grunt-contrib-nodeunit": "~0.1.2",
+    "grunt-contrib-watch": "~0.2"
+  },
+  "keywords": [
+    "binary",
+    "binary search tree",
+    "bst",
+    "search",
+    "tree",
+    "tiny",
+    "micro"
+  ]
+}
