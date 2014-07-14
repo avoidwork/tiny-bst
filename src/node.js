@@ -1,5 +1,5 @@
 /**
- * BST Node
+ * TinyBST Node
  *
  * @constructor
  * @param {Mixed}  data  Data
