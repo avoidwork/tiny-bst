@@ -1,0 +1,97 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Tiny BST by avoidwork</title>
+
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Tiny BST</h1>
+        <p>Tiny Binary Search Tree</p>
+
+        <p class="view"><a href="https://github.com/avoidwork/tiny-bst">View the Project on GitHub <small>avoidwork/tiny-bst</small></a></p>
+
+
+        <ul>
+          <li><a href="https://github.com/avoidwork/tiny-bst/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/avoidwork/tiny-bst/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/avoidwork/tiny-bst">View On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <p>BST micro library for the browser or server. When loaded as a script, Tiny Binary Search Tree is available as 'bst()'.</p>
+
+<h2>
+<a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
+
+<h4>
+<a name="find" class="anchor" href="#find"><span class="octicon octicon-link"></span></a>find()</h4>
+
+<p>Finds a Node in the BST</p>
+
+<h4>
+<a name="insert" class="anchor" href="#insert"><span class="octicon octicon-link"></span></a>insert()</h4>
+
+<p>Adds a Node to the BST</p>
+
+<h4>
+<a name="remove" class="anchor" href="#remove"><span class="octicon octicon-link"></span></a>remove()</h4>
+
+<p>Removes a Node from the BST</p>
+
+<h4>
+<a name="reverse" class="anchor" href="#reverse"><span class="octicon octicon-link"></span></a>reverse()</h4>
+
+<p>Returns a reverse sorted Array of the BST</p>
+
+<h4>
+<a name="show" class="anchor" href="#show"><span class="octicon octicon-link"></span></a>show()</h4>
+
+<p>Returns the <code>data</code> property of a Node</p>
+
+<h4>
+<a name="sort" class="anchor" href="#sort"><span class="octicon octicon-link"></span></a>sort()</h4>
+
+<p>Returns a sorted Array of the BST</p>
+
+<h2>
+<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">bst</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"tiny-bst"</span><span class="p">),</span>
+    <span class="nx">mybst</span> <span class="o">=</span> <span class="nx">bst</span><span class="p">();</span>
+
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="mi">24</span><span class="p">);</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>    <span class="c1">// [1, 3, 24]</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span> <span class="c1">// [24, 3, 1]</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="nx">left</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span> <span class="c1">// 1</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span> <span class="c1">// 24</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span> <span class="c1">// 1</span>
+</pre></div>
+
+<h2>
+<a name="license" class="anchor" href="#license"><span class="octicon octicon-link"></span></a>License</h2>
+
+<p>Copyright (c) 2014 Jason Mulligan<br>
+Licensed under the BSD-3 license.</p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/avoidwork">avoidwork</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <script src="javascripts/scale.fix.js"></script>
+    
+  </body>
+</html>
