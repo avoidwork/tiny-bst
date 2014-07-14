@@ -8,18 +8,18 @@ function TinyBST () {
 }
 
 /**
- * Finds a node based on it's data
+ * Finds a node based on it's key
  *
  * @memberOf TinyBST
  * @method find
- * @param  {Number} data Node data
- * @return {Object}      Node that holds data
+ * @param  {Mixed} key Node key
+ * @return {Object}    Node that holds key
  */
-TinyBST.prototype.find = function ( data ) {
+TinyBST.prototype.find = function ( key ) {
 	var current = this.root;
 
-	while ( current.data !== data ) {
-		if ( data < current.data ) {
+	while ( current.key !== key ) {
+		if ( key < current.key ) {
 			current = current.left;
 		}
 		else {
@@ -35,21 +35,24 @@ TinyBST.prototype.find = function ( data ) {
 };
 
 /**
- * Inserts data into the tree
+ * Inserts key into the tree
  *
  * @memberOf TinyBST
  * @method insert
- * @param  {Number} data Node data
- * @return {Object} {@link TinyBST}
+ * @param  {Mixed} key  Node key
+ * @param  {Mixed} data [Optional] Node data
+ * @return {Object}     {@link TinyBST}
  */
-TinyBST.prototype.insert = function ( data ) {
-	var current, side, node, parent;
+TinyBST.prototype.insert = function () {
+	var key   = arguments[0],
+	    data  = arguments[1] || null,
+	    current, side, node, parent;
 
-	if ( data === undefined ) {
+	if ( key === undefined ) {
 		throw new Error( "Invalid arguments" );
 	}
 
-	node = new Node( data, null, null );
+	node = new Node( key, data );
 
 	if ( this.root === null ) {
 		this.root = node;
@@ -59,7 +62,7 @@ TinyBST.prototype.insert = function ( data ) {
 
 		while ( true ) {
 			parent  = current;
-			side    = data < current.data ? "left" : "right";
+			side    = key < current.key ? "left" : "right";
 			current = current[side];
 
 			if ( current === null ) {
@@ -77,10 +80,10 @@ TinyBST.prototype.insert = function ( data ) {
  *
  * @memberOf TinyBST
  * @method min
- * @return {Number} Node data
+ * @return {Number} Node key
  */
 TinyBST.prototype.min = function () {
-	return min( this.root ).data;
+	return min( this.root ).key;
 };
 
 /**
@@ -88,10 +91,10 @@ TinyBST.prototype.min = function () {
  *
  * @memberOf TinyBST
  * @method max
- * @return {Number} Node data
+ * @return {Number} Node key
  */
 TinyBST.prototype.max = function () {
-	return max( this.root ).data;
+	return max( this.root ).key;
 };
 
 /**
@@ -110,11 +113,11 @@ TinyBST.prototype.sort = function () {
  *
  * @memberOf TinyBST
  * @method remove
- * @param  {Number} data Node data to remove
+ * @param  {Number} key Node key to remove
  * @return {Object} {@link TinyBST}
  */
-TinyBST.prototype.remove = function ( data ) {
-	removeNode( this.root, data );
+TinyBST.prototype.remove = function ( key ) {
+	removeNode( this.root, key );
 
 	return this;
 };

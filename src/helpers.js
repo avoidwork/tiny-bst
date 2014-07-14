@@ -3,17 +3,17 @@
  *
  * @method removeNode
  * @param  {Object} node Node to remove
- * @param  {Object} data Data to remove
+ * @param  {Object} key  Key to remove
  * @return {Mixed}       Node to substitute, or null
  */
-function removeNode ( node, data ) {
+function removeNode ( node, key ) {
 	var tmp;
 
 	if ( node === null ) {
 		return null;
 	}
 
-	if ( data === node.data ) {
+	if ( key === node.key ) {
 		if ( node.left === null && node.right === null ) {
 			return null;
 		}
@@ -27,14 +27,15 @@ function removeNode ( node, data ) {
 		}
 
 		tmp        = min( node.right );
+		node.key   = tmp.key;
 		node.data  = tmp.data;
-		node.right = removeNode( node.right, tmp.data );
+		node.right = removeNode( node.right, tmp.key );
 	}
-	else if ( data < node.data ) {
-		node.left = removeNode( node.left, data );
+	else if ( key < node.key ) {
+		node.left = removeNode( node.left, key );
 	}
 	else {
-		node.right = removeNode( node.right, data );
+		node.right = removeNode( node.right, key );
 	}
 
 	return node;
@@ -87,7 +88,7 @@ function sort ( node, order ) {
 
 	if ( node !== null ) {
 		output = sort( node.left, output );
-		output.push( node.show() );
+		output.push( node.key );
 		output = sort( node.right, output );
 	}
 

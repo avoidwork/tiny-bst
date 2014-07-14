@@ -6,13 +6,13 @@ BST micro library for the browser or server. When loaded as a script, Tiny Binar
 
 ## API
 
-#### find()
+#### find(key)
 Finds a Node in the BST
 
-#### insert()
+#### insert(key[, data])
 Adds a Node to the BST
 
-#### remove()
+#### remove(key)
 Removes a Node from the BST
 
 #### reverse()
@@ -24,7 +24,8 @@ Returns the `data` property of a Node
 #### sort()
 Returns a sorted Array of the BST
 
-## Example
+## Examples
+#### Pointers
 ```javascript
 var bst   = require("tiny-bst"),
     mybst = bst();
@@ -34,11 +35,28 @@ mybst.insert(24);
 mybst.insert(1);
 mybst.sort();    // [1, 3, 24]
 mybst.reverse(); // [24, 3, 1]
-mybst.find(3).left.data; // 1
+mybst.find(3).left.show(); // 1
 mybst.remove(3);
-mybst.root.data; // 24
+mybst.root.show(); // 24
 mybst.root.left.show(); // 1
 ```
+
+#### Data
+```javascript
+var bst   = require("tiny-bst"),
+    mybst = bst();
+
+mybst.insert(3, {abc: true});
+mybst.insert(24, {abc: false});
+mybst.insert(1, {abc: true});
+mybst.sort();    // [1, 3, 24]
+mybst.reverse(); // [24, 3, 1]
+mybst.find(3).left.show(); // {abc: true}
+mybst.remove(3);
+mybst.root.show(); // {abc: false}
+mybst.root.left.show();  // {abc: true}
+```
+
 ## License
 Copyright (c) 2014 Jason Mulligan  
 Licensed under the BSD-3 license.

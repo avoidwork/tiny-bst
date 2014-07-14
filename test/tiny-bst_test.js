@@ -29,9 +29,9 @@ exports["insert"] = {
 		test.strictEqual(tsort[0], 1, "Should be '1'");
 		test.strictEqual(tsort[1], 9, "Should be '9'");
 		test.strictEqual(tsort[2], 10, "Should be '10'");
-		test.strictEqual(this.bst.root.right.data, 10, "Should be '10'");
-		test.strictEqual(this.bst.find(1).right.data, 10, "Should be '10'");
-		test.strictEqual(this.bst.find(10).left.data, 9, "Should be '9'");
+		test.strictEqual(this.bst.root.right.show(), 10, "Should be '10'");
+		test.strictEqual(this.bst.find(1).right.show(), 10, "Should be '10'");
+		test.strictEqual(this.bst.find(10).left.show(), 9, "Should be '9'");
 		test.done();
 	}
 };
@@ -50,8 +50,8 @@ exports["remove"] = {
 		test.strictEqual(this.bst.sort().length, 3, "Should be '3'");
 		this.bst.remove(10);
 		test.strictEqual(this.bst.sort().length, 2, "Should be '2'");
-		test.strictEqual(this.bst.find(1).right.data, 9, "Should be '9'");
-		test.strictEqual(this.bst.root.right.data, 9, "Should be '9'");
+		test.strictEqual(this.bst.find(1).right.show(), 9, "Should be '9'");
+		test.strictEqual(this.bst.root.right.show(), 9, "Should be '9'");
 		test.done();
 	}
 };
