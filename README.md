@@ -19,7 +19,7 @@ Removes a Node from the BST
 Returns a reverse sorted Array of the BST
 
 #### show()
-Returns the `data` property of a Node
+Returns the `data` property of a Node if set, otherwise `key`
 
 #### sort()
 Returns a sorted Array of the BST

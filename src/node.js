@@ -4,8 +4,8 @@
  * @constructor
  * @param {Mixed}  key   Node identifier
  * @param {Mixed}  data  [Optional] Data to set on Node
- * @param {Object} left  {@link TinyBST}
- * @param {Object} right {@link TinyBST}
+ * @param {Object} left  {@link Node}
+ * @param {Object} right {@link Node}
  */
 function Node ( key, data ) {
 	this.key   = key;
