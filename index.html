@@ -34,17 +34,17 @@
 <a name="api" class="anchor" href="#api"><span class="octicon octicon-link"></span></a>API</h2>
 
 <h4>
-<a name="find" class="anchor" href="#find"><span class="octicon octicon-link"></span></a>find()</h4>
+<a name="findkey" class="anchor" href="#findkey"><span class="octicon octicon-link"></span></a>find(key)</h4>
 
 <p>Finds a Node in the BST</p>
 
 <h4>
-<a name="insert" class="anchor" href="#insert"><span class="octicon octicon-link"></span></a>insert()</h4>
+<a name="insertkey-data" class="anchor" href="#insertkey-data"><span class="octicon octicon-link"></span></a>insert(key[, data])</h4>
 
 <p>Adds a Node to the BST</p>
 
 <h4>
-<a name="remove" class="anchor" href="#remove"><span class="octicon octicon-link"></span></a>remove()</h4>
+<a name="removekey" class="anchor" href="#removekey"><span class="octicon octicon-link"></span></a>remove(key)</h4>
 
 <p>Removes a Node from the BST</p>
 
@@ -64,7 +64,10 @@
 <p>Returns a sorted Array of the BST</p>
 
 <h2>
-<a name="example" class="anchor" href="#example"><span class="octicon octicon-link"></span></a>Example</h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<h4>
+<a name="pointers" class="anchor" href="#pointers"><span class="octicon octicon-link"></span></a>Pointers</h4>
 
 <div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">bst</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"tiny-bst"</span><span class="p">),</span>
     <span class="nx">mybst</span> <span class="o">=</span> <span class="nx">bst</span><span class="p">();</span>
@@ -74,10 +77,27 @@
 <span class="nx">mybst</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
 <span class="nx">mybst</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>    <span class="c1">// [1, 3, 24]</span>
 <span class="nx">mybst</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span> <span class="c1">// [24, 3, 1]</span>
-<span class="nx">mybst</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="nx">left</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span> <span class="c1">// 1</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="nx">left</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span> <span class="c1">// 1</span>
 <span class="nx">mybst</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
-<span class="nx">mybst</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">data</span><span class="p">;</span> <span class="c1">// 24</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span> <span class="c1">// 24</span>
 <span class="nx">mybst</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span> <span class="c1">// 1</span>
+</pre></div>
+
+<h4>
+<a name="data" class="anchor" href="#data"><span class="octicon octicon-link"></span></a>Data</h4>
+
+<div class="highlight highlight-javascript"><pre><span class="kd">var</span> <span class="nx">bst</span>   <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s2">"tiny-bst"</span><span class="p">),</span>
+    <span class="nx">mybst</span> <span class="o">=</span> <span class="nx">bst</span><span class="p">();</span>
+
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="p">{</span><span class="nx">abc</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="mi">24</span><span class="p">,</span> <span class="p">{</span><span class="nx">abc</span><span class="o">:</span> <span class="kc">false</span><span class="p">});</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">insert</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="p">{</span><span class="nx">abc</span><span class="o">:</span> <span class="kc">true</span><span class="p">});</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">sort</span><span class="p">();</span>    <span class="c1">// [1, 3, 24]</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">reverse</span><span class="p">();</span> <span class="c1">// [24, 3, 1]</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">find</span><span class="p">(</span><span class="mi">3</span><span class="p">).</span><span class="nx">left</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span> <span class="c1">// {abc: true}</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">remove</span><span class="p">(</span><span class="mi">3</span><span class="p">);</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span> <span class="c1">// {abc: false}</span>
+<span class="nx">mybst</span><span class="p">.</span><span class="nx">root</span><span class="p">.</span><span class="nx">left</span><span class="p">.</span><span class="nx">show</span><span class="p">();</span>  <span class="c1">// {abc: true}</span>
 </pre></div>
 
 <h2>
