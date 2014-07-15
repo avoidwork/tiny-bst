@@ -72,7 +72,7 @@ TinyBST.prototype.insert = function () {
 		}
 	}
 
-	return this;
+	return node;
 };
 
 /**

@@ -1,7 +1,7 @@
 {
   "name": "tiny-bst",
   "description": "Binary Search Tree for browser or server",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "homepage": "http://avoidwork.github.io/tiny-bst",
   "author": {
     "name": "Jason Mulligan",

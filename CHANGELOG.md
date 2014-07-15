@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.1.2
+- Changed `insert()` to return the new `Node`
+
 ## 1.1.1
 - Changed `find()` to return `undefined` if no match is found
 - Reshaped the internal module structure
