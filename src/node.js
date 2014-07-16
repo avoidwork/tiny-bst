@@ -15,10 +15,18 @@ function Node ( key, data ) {
 }
 
 /**
- * Shows Node data or key
+ * Setting constructor loop
  *
  * @memberOf Node
+ * @type {Function}
+ */
+Node.prototype.constructor = Node;
+
+/**
+ * Shows Node data or key
+ *
  * @method show
+ * @memberOf Node
  * @return {Mixed} Data or key
  */
 Node.prototype.show = function () {

@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.2.0
+- Changed `sort()` to accept an optional Boolean, which will return the Nodes
+- Updated docblocks
+- Set prototype loops
+
 ## 1.1.2
 - Changed `insert()` to return the new `Node`
 

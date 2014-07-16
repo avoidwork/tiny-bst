@@ -8,10 +8,18 @@ function TinyBST () {
 }
 
 /**
- * Finds a node based on it's key
+ * Setting constructor loop
  *
  * @memberOf TinyBST
+ * @type {Function}
+ */
+TinyBST.prototype.constructor = TinyBST;
+
+/**
+ * Finds a node based on it's key
+ *
  * @method find
+ * @memberOf TinyBST
  * @param  {Mixed} key Node key
  * @return {Object}    Node that holds key
  */
@@ -37,8 +45,8 @@ TinyBST.prototype.find = function ( key ) {
 /**
  * Inserts key into the tree
  *
- * @memberOf TinyBST
  * @method insert
+ * @memberOf TinyBST
  * @param  {Mixed} key  Node key
  * @param  {Mixed} data [Optional] Node data
  * @return {Object}     {@link TinyBST}
@@ -78,8 +86,8 @@ TinyBST.prototype.insert = function () {
 /**
  * Finds the maximum value in the tree
  *
- * @memberOf TinyBST
  * @method max
+ * @memberOf TinyBST
  * @return {Number} Node key
  */
 TinyBST.prototype.max = function () {
@@ -89,8 +97,8 @@ TinyBST.prototype.max = function () {
 /**
  * Finds the minimum value in the tree
  *
- * @memberOf TinyBST
  * @method min
+ * @memberOf TinyBST
  * @return {Number} Node key
  */
 TinyBST.prototype.min = function () {
@@ -100,8 +108,8 @@ TinyBST.prototype.min = function () {
 /**
  * Removes a node from the tree
  *
- * @memberOf TinyBST
  * @method remove
+ * @memberOf TinyBST
  * @param  {Number} key Node key to remove
  * @return {Object} {@link TinyBST}
  */
@@ -114,8 +122,8 @@ TinyBST.prototype.remove = function ( key ) {
 /**
  * Puts the tree in reverse numerical order
  *
- * @memberOf TinyBST
  * @method reverse
+ * @memberOf TinyBST
  * @return {Array} Tree contents
  */
 TinyBST.prototype.reverse = function () {
@@ -125,10 +133,11 @@ TinyBST.prototype.reverse = function () {
 /**
  * Puts the tree in numerical order
  *
- * @memberOf TinyBST
  * @method sort
+ * @memberOf TinyBST
+ * @param {Boolean} obj [Optional] Return {@link Node} if `true`, default is `false`
  * @return {Array} Tree contents
  */
-TinyBST.prototype.sort = function () {
-	return bst.sort( this.root );
+TinyBST.prototype.sort = function ( obj ) {
+	return bst.sort( this.root, undefined, ( obj === true ) );
 };

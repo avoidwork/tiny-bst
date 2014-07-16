@@ -6,6 +6,7 @@ var bst = {
 	 * TinyBST factory
 	 *
 	 * @method factory
+	 * @memberOf bst
 	 * @return {Object} {@link TinyBST}
 	 */
 	factory: function () {
@@ -16,9 +17,10 @@ var bst = {
 	 * Removes a node from the tree
 	 *
 	 * @method removeNode
+	 * @memberOf bst
 	 * @param  {Object} node Node to remove
 	 * @param  {Object} key  Key to remove
-	 * @return {Mixed}       Node to substitute, or null
+	 * @return {Mixed}       {@link Node}
 	 */
 	removeNode : function ( node, key ) {
 		var tmp;
@@ -59,6 +61,7 @@ var bst = {
 	 * Finds the max value under a node
 	 *
 	 * @method max
+	 * @memberOf bst
 	 * @param  {Object} node Starting node
 	 * @return {Object}      Child node with the max value
 	 */
@@ -76,6 +79,7 @@ var bst = {
 	 * Finds the min value under a node
 	 *
 	 * @method min
+	 * @memberOf bst
 	 * @param  {Object} node Starting node
 	 * @return {Object}      Child node with the min value
 	 */
@@ -93,17 +97,19 @@ var bst = {
 	 * Puts a tree in order
 	 *
 	 * @method sort
-	 * @param  {Object} node  Node
-	 * @param  {Array}  order [Optional] Array of results
-	 * @return {Array}        Array of results
+	 * @memberOf bst
+	 * @param  {Object}  node  Node
+	 * @param  {Array}   order [Optional] Array of results
+	 * @param  {Boolean} obj   [Optional] Return {@link Node} if `true`, default is `false`
+	 * @return {Array}         Array of results
 	 */
-	sort : function ( node, order ) {
+	sort : function ( node, order, obj ) {
 		var output = order || [];
 
 		if ( node !== null ) {
-			output = bst.sort( node.left, output );
-			output.push( node.key );
-			output = bst.sort( node.right, output );
+			output = bst.sort( node.left, output, obj );
+			output.push( obj ? node : node.key );
+			output = bst.sort( node.right, output, obj );
 		}
 
 		return output;
