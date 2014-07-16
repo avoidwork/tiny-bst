@@ -21,8 +21,8 @@ Returns a reverse sorted Array of the BST
 #### show()
 Returns the `data` property of a Node if set, otherwise `key`
 
-#### sort()
-Returns a sorted Array of the BST
+#### sort([node])
+Returns a sorted Array of the BST, accepts an optional Boolean to return the Nodes instead of the `key`
 
 ## Examples
 #### Pointers
