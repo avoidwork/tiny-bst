@@ -1,5 +1,8 @@
 # Change Log
 
+## 1.2.1
+- Fixed `max()`, & `min()` such that an empty tree returns `0`, & added tests
+
 ## 1.2.0
 - Changed `sort()` to accept an optional Boolean, which will return the Nodes
 - Updated docblocks

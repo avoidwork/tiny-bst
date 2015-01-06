@@ -91,7 +91,9 @@ TinyBST.prototype.insert = function () {
  * @return {Number} Node key
  */
 TinyBST.prototype.max = function () {
-	return bst.max( this.root ).key;
+	var node = bst.max( this.root );
+
+	return node ? node.key : 0;
 };
 
 /**
@@ -102,7 +104,9 @@ TinyBST.prototype.max = function () {
  * @return {Number} Node key
  */
 TinyBST.prototype.min = function () {
-	return bst.min( this.root ).key;
+	var node = bst.min( this.root );
+
+	return node ? node.key : 0;
 };
 
 /**

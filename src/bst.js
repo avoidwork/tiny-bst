@@ -68,8 +68,10 @@ var bst = {
 	max : function ( node ) {
 		var current = node;
 
-		while ( current.right !== null ) {
-			current = current.right;
+		if ( current !== null ) {
+			while ( current.right !== null ) {
+				current = current.right;
+			}
 		}
 
 		return current;
@@ -86,8 +88,10 @@ var bst = {
 	min : function ( node ) {
 		var current = node;
 
-		while ( current.left !== null ) {
-			current = current.left;
+		if ( current !== null ) {
+			while ( current.left !== null ) {
+				current = current.left;
+			}
 		}
 
 		return current;
